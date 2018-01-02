@@ -7,7 +7,6 @@ sh "jarfile_name=${jar_name} /usr/local/bin/docker-compose up -d"
      passThreshold: 0,
      unstableThreshold: 0,
      otherFiles: ""])
-     println "outside"
     // If Robot Framework test case fails, then the build will be failed // 
     if("${currentBuild.result}" == "FAILURE")
       { 
