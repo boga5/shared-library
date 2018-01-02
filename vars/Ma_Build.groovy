@@ -11,4 +11,5 @@ Reason = "Maven Build Failed"
      
     }
    //}
+   return buildInfo
 }
