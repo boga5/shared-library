@@ -1,16 +1,13 @@
-
 class A {
 	def lock_resource_name 
-         def Sonar_project_name 
+        def Sonar_project_name 
+	def JobName
 }
 def call() {
-JobName = "${JOB_NAME}"
 	A a = new A()
-	
-           a.lock_resource_name = "jenkins-file"
-           a.Sonar_project_name = "jenkins-file"
-	println a.lock_resource_name
-           println a.Sonar_project_name
+	a.JobName = "${JOB_NAME}"
+        a.lock_resource_name = "jenkins-file"
+        a.Sonar_project_name = "jenkins-file"
 	return a
 	/*	if("${BRANCH_NAME}".startsWith('PR-'))
 			{
