@@ -1,6 +1,7 @@
 
 def call() {
 Reason = "Maven Build Failed"
+   def rtMaven = Artifactory.newMavenBuild()
    println Reason
    rtMaven.deployer server: server, snapshotRepo: docker_properties.snapshot_repo, releaseRepo: docker_properties.release_repo   //Deploying artifacts to this repo //
    rtMaven.deployer.deployArtifacts = false  //this will not publish artifacts soon after build succeeds //
