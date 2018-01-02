@@ -46,4 +46,5 @@ def jar_name = getMavenBuildArtifactName()
        }
       sh """docker logout
        """
+   }
 }
