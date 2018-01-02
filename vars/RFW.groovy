@@ -1,8 +1,7 @@
-def call(def lock_resource_name, def robot_result_folder, def rtMaven, def server, def jar_name) {
+def call(def robot_result_folder, def rtMaven, def server, def jar_name) {
 sh "jarfile_name=${jar_name} /usr/local/bin/docker-compose up -d"
     sh "sudo chmod 777 wait_for_robot.sh "
                 sh './wait_for_robot.sh'
-    robot_result_folder = docker_properties.robot_result_folder
     step([$class: 'RobotPublisher',
      outputPath: "/home/robot/${robot_result_folder}",
      passThreshold: 0,
