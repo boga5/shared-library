@@ -1,5 +1,6 @@
 def call(def lock_resource_name, def robot_result_folder, def jar_name, def rtMaven, def server, def Docker_Reg_Name, def om_image_name, def cp_image_name, def Docker_Registry_URL, def Docker_Credentials, def image_version)
 {
+println "Inside"
 Reason = "Docker Deployment or Robot Framework Test cases Failed"
    lock(lock_resource_name) {
     // Docker Compose starts // 
