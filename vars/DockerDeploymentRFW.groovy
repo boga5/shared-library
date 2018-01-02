@@ -1,3 +1,4 @@
+
 def call(def lock_resource_name, def robot_result_folder, def rtMaven, def server, def Docker_Reg_Name, def om_image_name, def cp_image_name, def Docker_Registry_URL, def Docker_Credentials, def image_version) {
 println "Inside"
 Reason = "Docker Deployment or Robot Framework Test cases Failed"
@@ -46,5 +47,17 @@ def jar_name = getMavenBuildArtifactName()
        }
       sh """docker logout
        """
+        }  //Docker publish stage ends here
+     
+     // **** Stage for triggering CD pipeline **** //    
+    /* stage ('Starting QA job') {
+     Reason = "Trriggering downStream Job Failed"
+                    CD_Job_name = Sonar_project_name + "_QA"
+          build job: CD_Job_name//, parameters: [[$class: 'StringParameterValue', name: 'var1', value: 'var1_value']]
+     }*/ 
+    }     //if loop
+    }
+    sh './clean_up.sh' 
    }
 }
+
