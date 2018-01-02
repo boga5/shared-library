@@ -1,4 +1,4 @@
-def call(def Docker_Reg_Name, def om_image_name, def cp_image_name, def Docker_Registry_URL, def Docker_Credentials, def image_version, def jar_name, def JobName) {
+def call(def Docker_Reg_Name, def om_image_name, def cp_image_name, def Docker_Registry_URL, def Docker_Credentials, def image_version, def JobName) {
 stage('Pushing Artifacts')
 				{
 					Reason = "Pushing Artifacts stage failed"
