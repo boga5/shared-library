@@ -10,5 +10,6 @@ def call(def Docker_Reg_Name, def om_image_name, def cp_image_name, def Docker_R
 			docker.image("${image}").push("latest")
         	}
 	}
-	sh """docker logout""" 				
+	sh """docker logout""" 
+	return Reason
 }
