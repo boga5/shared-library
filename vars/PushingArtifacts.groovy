@@ -1,6 +1,6 @@
-def call(def rtMaven, def server, def buildInfo) {
+def call(def rtMaven) {
  Reason = "Artifacts Deployment Failed"
  rtMaven.deployer.deployArtifacts buildInfo
  server.publishBuildInfo buildInfo
 }
-//
+//, def server, def buildInfo
